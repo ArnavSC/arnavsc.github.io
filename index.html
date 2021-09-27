@@ -1,104 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <style>
-            .register .nav-tabs .nav-link:hover{
-                border: none;
-            }
-            .text-align{
-                margin-top: -3%;
-                margin-bottom: -9%;
-
-                padding: 10%;
-                margin-left: 30%;
-            }
-            .form-new{
-                margin-right: 22%;
-                margin-left: 20%;
-            }
-            .register-heading{
-                margin-left: 21%;
-                margin-bottom: 10%;
-                color: #e9ecef;
-            }
-            .register-heading h1{
-                margin-left: 21%;
-                margin-bottom: 10%;
-                color: #e9ecef;
-            }
-            .register{
-                background: black;
-                margin-top: 3%;
-                padding: 3%;
-                border-radius: 2.5rem;
-            }
-            .btnSubmit
-            {
-                width: 50%;
-                border-radius: 1rem;
-                padding: 1.5%;
-                color: #fff;
-                background-color: #03612e;
-                border: none;
-                cursor: pointer;
-                margin-right: 6%;
-                color: rgb(246, 246, 252);
-                margin-top: 4%;
-            }
-    </style>
+  <meta charset="UTF-8">
+  <title>CodePen - RWD Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./style.css">
+<link rel="prefetch stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-    
-<div class="container register">
-            <div class="row">
-                <div class="col-md-12">
-                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <h3 class="register-heading">Connect Google Spreadsheet to HTML</h3>
-                            <div class="row register-form">
-                                <div class="col-md-12">
-                                    <form method="post" autocomplete="off" name="google-sheet">
-                                        <div class="form-group">
-                                            <input type="text" name="Name" class="form-control" placeholder="Your Name *" value="" required=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" required=""/>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input type="number" name="Phone" class="form-control" placeholder="Your Contact Number *" value="" required=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" name="Areas of Interest" class="form-control" placeholder="Your Areas of interest *" value="" required=""/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="Login" />
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+  <div class="intro">
+    <div class="profile">
+      
+      <div class="bio">
+        <h1 class="name">Arnav Chawathe</h1>
+        <p class="profession">Student</p>
+      </div>
+    </div>
+    <div class="intro-section about">
+      <h1 class="title">about me</h1>
+      <p class="paragraph">
+        Striving to gain more experience in the professional environment and further improve my knowledge in the field of Computer Science
+      </p>
+    </div>
+    <div class="intro-section contact">
+      <h1 class="title">Contact</h1>
+      <div class="info-section">
+        <i class="fas fa-phone"></i>
+        <span>(+91)98334 11196</span>
+      </div>
+      <div class="info-section">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Mumbai, India</span>
+      </div>
+      <div class="info-section">
+        <i class="fas fa-paper-plane"></i>
+        <span>arnavchawathe@gmail.com</span>
+      </div>
+      <div class="info-section link">
+        <i class="fab fa-facebook"></i>
+        <a target="_blank" rel="author" href="https://www.facebook.com/arnav_chawathe">
+          <span>Arnav Chawathe</span>
+        </a>
+      </div>
+    </div>
+    <div class="intro-section follow">
+      <h1 class="title">Follow</h1>
+      <div class="info-section link">
+        <i class="fab fa-github"></i>
+        <a target="_blank" rel="author" href="https://github.com/ArnavSC">
+          <span>ArnavSC@github</span>
+        </a>
+      </div>
+      <div class="info-section link">
+        <i class="fab fa-codepen"></i>
+        <a target="_blank" rel="author" href="www.linkedin.com/in/arnav-c">
+          <span>LinkedIn</span>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+  <div class="detail">
+    <div class="detail-section edu">
+      <div class="detail-title">
+        <div class="title-icon">
+          <i class="fas fa-user-graduate"></i>
         </div>
-          
-          <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxhYdRaLJrJv3C6hIcnpFaRpi-4Y0c4BudLHm-uY8BhNnddoLSGMRL6clXIiWyolOPLUw/exec'
-            const form = document.forms['google-sheet']
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-                .catch(error => console.error('Error!', error.message))
-            })
-          </script>
+        <span>Eduation</span>
+      </div>
+      <div class="detail-content">
+        <div class="timeline-block">
+          <h1>Fr Conceicao Rodrigues College of Engineering</h1>
+          <p>Mumbai, India</p>
+          <time>2019-2023</time>
+        </div>
+        <div class="timeline-block">
+          <h1>Gopi Birla Memorial School</h1>
+          <p>Mumbai, India</p>
+          <time>2016-2019</time>
+        </div>
+      </div>
+    </div>
+    <div class="detail-section pg-skill">
+      <div class="detail-title">
+        <div class="title-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <span>Programming skills</span>
+      </div>
+      <div class="detail-content">
+        <ul class="pg-list">
+          <li>
+            <span>Python</span>
+            <div class="sb-skeleton">
+              <div class="skillbar" style="--pgbar-length: 90%"></div>
+            </div>
+          </li>
+          <li>
+            <span>C++</span>
+            <div class="sb-skeleton">
+              <div class="skillbar" style="--pgbar-length: 85%"></div>
+            </div>
+          </li>
+          <li>
+            <span>JAVA</span>
+            <div class="sb-skeleton">
+              <div class="skillbar" style="--pgbar-length: 70%"></div>
+            </div>
+          </li>
+          <li>
+            <span>C</span>
+            <div class="sb-skeleton">
+              <div class="skillbar" style="--pgbar-length: 60%"></div>
+            </div>
+          </li>
+          <li>
+            <span>Data Learning</span>
+            <div class="sb-skeleton">
+              <div class="skillbar" style="--pgbar-length: 40%"></div>
+            </div>
+          </li>
+          <li>
+            <span>PostgreSQL</span>
+            <div class="sb-skeleton">
+              <div class="skillbar" style="--pgbar-length: 75%"></div>
+            </div>
+          </li>
+          <li>
+            <span>IoT</span>
+            <div class="sb-skeleton">
+              <div class="skillbar" style="--pgbar-length: 50%"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="detail-section tool-skill">
+      <div class="detail-title">
+        <div class="title-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <span>Developement Tools</span>
+      </div>
+      <div class="detail-content">
+        <ul class="tool-list">
+          <li>
+            <svg viewbox="0 0 100 100">
+              <circle cx="50" cy="50" r="45"></circle>
+              <circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.6"></circle>
+            </svg>
+            <span class="tl-name">Android Studio</span>
+            <span class="tl-exp"></span>
+          </li>
+          <li>
+            <svg viewbox="0 0 100 100">
+              <circle cx="50" cy="50" r="45"></circle>
+              <circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.8"></circle>
+            </svg>
+            <span class="tl-name">Robot Operating System</span>
+            <span class="tl-exp"></span>
+          </li>
+          <li>
+            <svg viewbox="0 0 100 100">
+              <circle cx="50" cy="50" r="45"></circle>
+              <circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.7"></circle>
+            </svg>
+            <span class="tl-name">Git</span>
+            <span class="tl-exp"></span>
+          </li>
+          <li>
+            <svg viewbox="0 0 100 100">
+              <circle cx="50" cy="50" r="45"></circle>
+              <circle class="cbar" cx="50" cy="50" r="45" style="--percent: 0.74"></circle>
+            </svg>
+            <span class="tl-name">Arduino IDE</span>
+            <span class="tl-exp"></span>
+          </li>
+        </ul>
+      </div>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </div>
+    <div class="detail-section interests">
+      <div class="detail-title">
+        <div class="title-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <span>Interests</span>
+      </div>
+      <div class="detail-content">
+        <div class="outer-frame">
+          <ul class="favor-list">
+            <li>
+              <i class="fas fa-gamepad"></i>
+              <span>Game</span>
+            </li>
+            <li>
+              <i class="fas fa-paw"></i>
+              <span>Pet</span>
+            </li>
+            <li>
+              <i class="far fa-headphones-alt"></i>
+              <span>Music</span>
+            </li>
+            <li>
+              <i class="fas fa-book-spells"></i>
+              <span>Self-learning</span>
+            </li>
+            <li>
+              <i class="fas fa-user-edit"></i>
+              <span>Blog</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
 </body>
 </html>
